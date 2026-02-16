@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#FDFBF7" />
+    <title>新年礼物</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 中文衬线字体：Noto Serif SC, 英文衬线：Playfair Display, 英文手写体：Dancing Script -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#welcome">跳到正文</a>
+
+    <main class="page" id="top">
+      <section class="section section-welcome" id="welcome" data-nav-label="欢迎">
+        <div class="container">
+          <p class="eyebrow">To: 你</p>
+          <h1 class="title">新年快乐</h1>
+          <p class="subtitle">这是一份迟来的心意。<br>愿你在新的时光里，温柔且坚定。</p>
+          
+          <div class="badge-row" role="list" aria-label="关键词">
+            <span class="badge" role="listitem"><i data-lucide="feather" class="icon-sm"></i> 温柔</span>
+            <span class="badge" role="listitem"><i data-lucide="sun" class="icon-sm"></i> 坚定</span>
+            <span class="badge" role="listitem"><i data-lucide="sparkles" class="icon-sm"></i> 好运</span>
+            <span class="badge" role="listitem"><i data-lucide="heart" class="icon-sm"></i> 陪伴</span>
+          </div>
+          
+          <div class="cta-row">
+            <a class="primary-btn" href="#letter" data-scroll="letter">
+              打开信件 <i data-lucide="mail-open" class="icon-sm"></i>
+            </a>
+            <a class="ghost-btn" href="#photos" data-scroll="photos">
+              查看合照 <i data-lucide="image" class="icon-sm"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-letter" id="letter" data-nav-label="信件">
+        <div class="container">
+          <h2 class="section-title" id="letterTitle">见字如面</h2>
+          <article class="letter-card" id="letterCard" aria-label="信件内容" data-collapsed="true">
+            <div id="letterBody"></div>
+            <p class="sign" id="letterSign"></p>
+            <div class="letter-fade" aria-hidden="true"></div>
+          </article>
+          <div class="cta-row" id="letterActions" style="justify-content: center; margin-top: 2rem;">
+            <button class="ghost-btn" type="button" id="letterToggleButton">
+              展开全文 <i data-lucide="chevron-down" class="icon-sm"></i>
+            </button>
+          </div>
+          <div class="cta-row" style="margin-top: 4rem;">
+            <a class="ghost-btn" href="#photos" data-scroll="photos">
+              继续往下 <i data-lucide="arrow-down" class="icon-sm"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-photos" id="photos" data-nav-label="合照">
+        <div class="container">
+          <h2 class="section-title">定格瞬间</h2>
+          <p class="section-desc">这些画面，是我们共同度过的时光。</p>
+          <div class="photo-grid" id="photoGrid" aria-label="合照网格"></div>
+          <div class="cta-row" style="margin-top: 4rem;">
+            <a class="ghost-btn" href="#surprise" data-scroll="surprise">
+              发现惊喜 <i data-lucide="gift" class="icon-sm"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-surprise" id="surprise" data-nav-label="惊喜">
+        <div class="container">
+          <h2 class="section-title">小小惊喜</h2>
+          <p class="section-desc">给你准备的一点仪式感。</p>
+          
+          <div class="surprise-card" aria-live="polite">
+            <button class="primary-btn" type="button" id="revealButton">
+              点击揭晓 <i data-lucide="sparkles" class="icon-sm"></i>
+            </button>
+            
+            <div class="surprise-content" id="surpriseContent" hidden>
+              <p class="surprise-subtitle" style="margin-top: 2rem;">愿你新的一年</p>
+              <ul class="wish-list" aria-label="祝福清单">
+                <li><i data-lucide="check" class="icon-xs"></i> 做自己也被接住</li>
+                <li><i data-lucide="check" class="icon-xs"></i> 努力被看见</li>
+                <li><i data-lucide="check" class="icon-xs"></i> 爱与好运都在路上</li>
+              </ul>
+              
+              <div class="surprise-shelf" aria-label="惊喜加餐">
+                <section class="surprise-panel" aria-label="时间线">
+                  <h3 class="surprise-subtitle"><i data-lucide="clock" class="icon-sm"></i> 我们的时间线</h3>
+                  <div class="timeline" id="timelineList" role="list" aria-label="时间线卡片"></div>
+                </section>
+                
+                <section class="surprise-panel" aria-label="刮刮卡">
+                  <h3 class="surprise-subtitle"><i data-lucide="eraser" class="icon-sm"></i> 刮刮卡</h3>
+                  <p class="scratch-hint">刮开涂层，看看藏着什么话。</p>
+                  <div class="scratch-card" id="scratchCard" aria-label="刮刮卡面板">
+                    <div class="scratch-reveal" id="scratchReveal" aria-live="polite">
+                      <p class="scratch-title">隐藏内容</p>
+                      <p class="scratch-message" id="scratchMessage">你收获了一个超级爱你的男友呀</p>
+                    </div>
+                    <canvas class="scratch-canvas" id="scratchCanvas" aria-label="刮刮卡涂层"></canvas>
+                  </div>
+                  <div class="cta-row" style="justify-content: center; margin-top: 1.5rem;">
+                    <button class="ghost-btn" type="button" id="scratchResetButton">
+                      重新盖上 <i data-lucide="rotate-ccw" class="icon-sm"></i>
+                    </button>
+                  </div>
+                </section>
+                
+                <section class="surprise-panel" aria-label="抽一句">
+                  <h3 class="surprise-subtitle"><i data-lucide="message-square" class="icon-sm"></i> 每日一句</h3>
+                  <div class="quote-card" aria-live="polite">
+                    <p class="quote-text" id="quoteText"></p>
+                    <p class="quote-from" id="quoteFrom" hidden></p>
+                  </div>
+                  <div class="cta-row" style="justify-content: center;">
+                    <button class="ghost-btn" type="button" id="quoteButton">
+                      换一句 <i data-lucide="shuffle" class="icon-sm"></i>
+                    </button>
+                  </div>
+                </section>
+              </div>
+              
+              <div class="cta-row" style="justify-content: center; margin-top: 4rem;">
+                <a class="ghost-btn" href="#welcome" data-scroll="welcome">
+                  回到开头 <i data-lucide="arrow-up" class="icon-sm"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav" aria-label="底部导航">
+      <a class="nav-item" href="#welcome" data-scroll="welcome" aria-label="首页">
+        <i data-lucide="home"></i>
+      </a>
+      <a class="nav-item" href="#letter" data-scroll="letter" aria-label="信件">
+        <i data-lucide="mail"></i>
+      </a>
+      <a class="nav-item" href="#photos" data-scroll="photos" aria-label="合照">
+        <i data-lucide="image"></i>
+      </a>
+      <a class="nav-item" href="#surprise" data-scroll="surprise" aria-label="惊喜">
+        <i data-lucide="gift"></i>
+      </a>
+    </nav>
+
+    <div class="lightbox" id="lightbox" hidden>
+      <div class="lightbox-backdrop" data-lightbox-close="true"></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="合照预览">
+        <button class="lightbox-close" type="button" aria-label="关闭预览" data-lightbox-close="true">
+          <i data-lucide="x"></i>
+        </button>
+        <img class="lightbox-image" id="lightboxImage" alt="" />
+      </div>
+    </div>
+
+    <script src="./content/content.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+  </body>
+</html>

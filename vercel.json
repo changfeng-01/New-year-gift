@@ -1,9 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/", "destination": "/public/index.html" },
-    { "source": "/assets/(.*)", "destination": "/public/assets/$1" },
-    { "source": "/content/(.*)", "destination": "/public/content/$1" },
-    { "source": "/scripts/(.*)", "destination": "/public/scripts/$1" },
-    { "source": "/styles/(.*)", "destination": "/public/styles/$1" }
-  ]
-}
