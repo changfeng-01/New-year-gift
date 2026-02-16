@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/main.css" />
   </head>
   <body>
+    <audio id="bgm" src="./content/bgm.mp3" loop></audio>
     <a class="skip-link" href="#welcome">跳到正文</a>
 
     <main class="page" id="top">
@@ -31,7 +32,10 @@
           </div>
           
           <div class="cta-row">
-            <a class="primary-btn" href="#letter" data-scroll="letter">
+            <button class="primary-btn" id="startBtn">
+              开启旅程 <i data-lucide="play" class="icon-sm"></i>
+            </button>
+            <a class="primary-btn" href="#letter" data-scroll="letter" id="openLetterBtn" hidden>
               打开信件 <i data-lucide="mail-open" class="icon-sm"></i>
             </a>
             <a class="ghost-btn" href="#photos" data-scroll="photos">

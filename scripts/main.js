@@ -934,11 +934,26 @@
     });
   };
 
+  const initBgm = () => {
+    const bgm = document.getElementById("bgm");
+    const startBtn = document.getElementById("startBtn");
+    const openLetterBtn = document.getElementById("openLetterBtn");
+    
+    if (!(bgm instanceof HTMLAudioElement) || !(startBtn instanceof HTMLButtonElement)) return;
+
+    startBtn.addEventListener("click", () => {
+      bgm.play().catch(() => console.log("BGM autoplay prevented"));
+      startBtn.hidden = true;
+      if (openLetterBtn) openLetterBtn.hidden = false;
+    });
+  };
+
   const init = () => {
     if (window.lucide) {
       window.lucide.createIcons();
     }
 
+    initBgm();
     bindNavClicks();
     initLetter();
     initPhotos();
