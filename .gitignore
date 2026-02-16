@@ -1,0 +1,40 @@
+# =========== 操作系统垃圾 ===========
+# Windows 文件夹缩略图缓存
+Thumbs.db
+Desktop.ini
+# Mac 系统垃圾 (万一队友用Mac)
+.DS_Store
+
+# =========== C/C++ 编译垃圾 ===========
+# 编译生成的执行文件 (Windows下是.exe)
+*.exe
+# 编译中间文件
+*.o
+*.obj
+*.dll
+*.lib
+*.iso
+
+# =========== Python 运行垃圾 ===========
+# Python 编译缓存文件夹
+__pycache__/
+*.py[cod]
+# 虚拟环境 (如果有)
+venv/
+.venv/
+env/
+
+# =========== LaTeX 排版垃圾 (写论文必备) ===========
+# LaTeX 编译时会产生一大堆辅助文件，只有 .tex 和 .pdf 是有用的
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+
+# =========== 编辑器配置 ===========
+# 也就是 Trae/VS Code 的个人配置文件，不需要传给队友
+.vscode/
+.idea/
